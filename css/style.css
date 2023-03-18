@@ -38,6 +38,7 @@ body {
 
 .col button {
   padding: 10px;
+  outline: none;
   color: #fff;
   border-radius: 10px;
   border: none;
