@@ -6,6 +6,10 @@ document.addEventListener('keydown', (event) => {
   }
 })
 
+document.addEventListener('touchstart', (event) => {
+  randomColor();
+})
+
 function randomGenerator() {
   const hexCodes = '0123456789ABCDEF';
   let color = '';
