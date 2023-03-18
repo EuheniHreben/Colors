@@ -1,14 +1,36 @@
+@function rem($px) {
+  @return $px / 18px + 0rem;
+}
+
+@mixin phones {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
   height: 100vh;
-  display: flex;
   font-family: 'Roboto', sans-serif;
   position: relative;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  @include phones {
+    & div:nth-child(2n+1) {
+      display: none;
+    }
+  }
 }
 
 .col {
@@ -20,7 +42,7 @@ body {
 }
 
 .col h2 {
-  font-size: 20px;
+  font-size: 28px;
   color: #fff;
   padding: 10px;
   border-radius: 10px;
@@ -49,9 +71,12 @@ body {
 
 .col h3 {
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
   text-transform: uppercase;
   cursor: default;
+  @include phones() {
+    display: none;
+  }
 }
 
 #blink {
