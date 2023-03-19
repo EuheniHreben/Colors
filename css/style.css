@@ -15,7 +15,7 @@ body {
   min-height: 100%;
   overflow: hidden; }
   @media (max-width: 480px) {
-    .wrapper div:nth-child(2n+1) {
+    .wrapper div:nth-child(n+3) {
       display: none; } }
 
 .col {

@@ -61,15 +61,11 @@ function randomColor() {
     }
     text.textContent = color;
     col.style.background = randomGenerator();
-    // textColor(button, color);
   })
-  h1.style.color = c2.style.background;
-  h2.style.color = c1.style.background;
-}
-
-function textColor(text, color) {
-  const luminance = chroma(color).luminance();
-  text.style.color = luminance > .5 ? 'black' : 'white';
+  if (screenWidth<480) {
+    h1.style.color = c2.style.background;
+    h2.style.color = c1.style.background;
+  }
 }
 
 function clickCopy(text) {
