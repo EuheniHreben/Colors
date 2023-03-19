@@ -16,7 +16,6 @@ if (screenWidth<480) {
       randomColor();
     }
   })
-
 } else {
   document.addEventListener('keydown', (event) => {
     event.preventDefault();
@@ -24,7 +23,6 @@ if (screenWidth<480) {
       randomColor();
     }
   })
-  
   document.addEventListener('click', (event) => {
     const type = event.target.dataset.type;
     if (type === 'lock') {
@@ -42,13 +40,17 @@ if (screenWidth<480) {
 function randomGenerator() {
   const hexCodes = '0123456789ABCDEF';
   let color = '';
-  for ( let i=0; i<6; i++) {
+  for (let i=0; i<6; i++) {
     color += hexCodes[Math.floor(Math.random() * hexCodes.length)];
   }
   return '#' + color;
 }
 
 function randomColor() {
+  const c1 = document.getElementById('c1');
+  const c2 = document.getElementById('c2');
+  const h1 = document.getElementById('h1');
+  const h2 = document.getElementById('h2');
   cols.forEach(function(col) {
     const text = col.querySelector('h2');
     const button = col.querySelector('button');
@@ -59,9 +61,10 @@ function randomColor() {
     }
     text.textContent = color;
     col.style.background = randomGenerator();
-    textColor(text, color);
-    textColor(button, color);
+    // textColor(button, color);
   })
+  h1.style.color = c2.style.background;
+  h2.style.color = c1.style.background;
 }
 
 function textColor(text, color) {
