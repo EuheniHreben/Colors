@@ -1,4 +1,5 @@
 const cols = document.querySelectorAll('.col');
+const info = document.querySelector('.wrapper');
 const screenWidth = window.screen.width;
 
 if (screenWidth<480) {
@@ -69,6 +70,10 @@ function randomColor() {
 }
 
 function clickCopy(text) {
+  const content = document.createElement('div');
+  content.classList.add('copy');
+  content.innerHTML = 'скопировано';
+  info.appendChild(content);
   return navigator.clipboard.writeText(text);
 }
 
