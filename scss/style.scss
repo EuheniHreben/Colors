@@ -123,6 +123,11 @@ body {
   align-items: center;
   justify-content: center;
 	margin: auto;
+  @include phones() {
+    font-size: 20px;
+    width: 150px;
+    height: 80px;
+  }
 }
 
 @-webkit-keyframes info {

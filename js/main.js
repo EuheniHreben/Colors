@@ -72,7 +72,7 @@ function randomColor() {
 function clickCopy(text) {
   const content = document.createElement('div');
   content.classList.add('copy');
-  content.innerHTML = 'скопировано';
+  content.innerHTML = 'Copied';
   info.appendChild(content);
   return navigator.clipboard.writeText(text);
 }
