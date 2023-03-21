@@ -15,7 +15,11 @@ body {
   min-height: 100%;
   overflow: hidden; }
   @media (max-width: 480px) {
-    .wrapper div:nth-child(n+3) {
+    .wrapper div:nth-child(3) {
+      display: none; }
+    .wrapper div:nth-child(4) {
+      display: none; }
+    .wrapper div:nth-child(5) {
       display: none; } }
 
 .col {
