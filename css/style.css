@@ -1,25 +1,21 @@
+body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  position: relative; }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
 
-body {
-  height: 100vh;
-  font-family: 'Roboto', sans-serif;
-  position: relative; }
-
 .wrapper {
   display: flex;
   width: 100%;
   min-height: 100%;
   overflow: hidden; }
-  @media (max-width: 480px) {
-    .wrapper div:nth-child(3) {
-      display: none; }
-    .wrapper div:nth-child(4) {
-      display: none; }
-    .wrapper div:nth-child(5) {
+  @media (max-width: 700px) {
+    .wrapper div:nth-child(-n + 3) {
       display: none; } }
 
 .col {
@@ -36,9 +32,8 @@ body {
   border-radius: 10px;
   cursor: pointer;
   transition: background .3s; }
-
-.col h2:hover {
-  background: rgba(0, 0, 0, 0.2); }
+  .col h2:hover {
+    background: rgba(0, 0, 0, 0.2); }
 
 .col button {
   padding: 10px;
@@ -50,22 +45,48 @@ body {
   font-size: 1.5rem;
   cursor: pointer;
   transition: background .3s; }
-
-.col button:hover {
-  background: rgba(0, 0, 0, 0.1); }
+  .col button:hover {
+    background: rgba(0, 0, 0, 0.1); }
 
 .col h3 {
   position: absolute;
+  display: block;
   text-transform: uppercase;
   cursor: default;
   right: 0;
   left: 0;
   bottom: 8%;
-  width: 120px;
-  margin: auto; }
-  @media (max-width: 480px) {
+  max-width: 140px;
+  margin: 0 auto; }
+  @media (max-width: 700px) {
     .col h3 {
       display: none; } }
+
+.copy {
+  position: absolute;
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 30px;
+  -webkit-animation: info 1s linear;
+  animation: info 1s linear;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  max-width: 250px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto; }
+  @media (max-width: 700px) {
+    .copy {
+      font-size: 20px;
+      width: 150px;
+      height: 80px; } }
 
 #blink {
   -webkit-animation: blink 3s linear infinite;
@@ -85,32 +106,6 @@ body {
     color: rgba(34, 34, 34, 0); }
   100% {
     color: #222222; } }
-.copy {
-  position: absolute;
-  padding: 5px;
-  border-radius: 10px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.2);
-  font-size: 30px;
-  -webkit-animation: info 1s linear;
-  animation: info 1s linear;
-  opacity: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 250px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto; }
-  @media (max-width: 480px) {
-    .copy {
-      font-size: 20px;
-      width: 150px;
-      height: 80px; } }
-
 @-webkit-keyframes info {
   0% {
     opacity: 0; }
