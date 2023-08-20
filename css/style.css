@@ -36,7 +36,13 @@ body {
   border-radius: 10px;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.1);
-  box-shadow: 3px 3px 10px -7px  black; }
+  box-shadow: 3px 3px 10px -7px  black;
+  transition: background .3s; }
+  .col h2:active {
+    -webkit-animation: blink 3s linear infinite;
+    animation: blink 3s linear infinite; }
+  .col h2:hover {
+    background: rgba(0, 0, 0, 0.2); }
 
 .col button {
   padding: 10px;
@@ -47,6 +53,8 @@ body {
   box-shadow: 3px 3px 10px -7px  black;
   font-size: 1.5rem;
   cursor: pointer; }
+  .col button:hover {
+    background: rgba(0, 0, 0, 0.2); }
 
 .col h3 {
   position: absolute;

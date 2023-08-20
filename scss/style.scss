@@ -51,6 +51,14 @@ body {
   cursor: pointer;
   background: rgba(0, 0, 0, .1);
   box-shadow: 3px 3px 10px -7px  black;
+  transition: background .3s;
+  &:active {
+    -webkit-animation: blink 3s linear infinite;
+    animation: blink 3s linear infinite;
+  }
+  &:hover {
+    background: rgba(0, 0, 0, .2);
+  }
 }
 
 .col button {
@@ -62,6 +70,9 @@ body {
   box-shadow: 3px 3px 10px -7px  black;
   font-size: 1.5rem;
   cursor: pointer;
+  &:hover {
+    background: rgba(0, 0, 0, .2);
+  }
 }
 
 .col h3 {
