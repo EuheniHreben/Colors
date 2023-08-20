@@ -97,23 +97,19 @@ body {
       height: 80px; } }
 
 #blink {
-  -webkit-animation: blink 3s linear infinite;
-  animation: blink 3s linear infinite; }
+  -webkit-animation: blink 12s forwards;
+  animation: blink 12s forwards; }
 
 @-webkit-keyframes blink {
   0% {
     color: #222222; }
-  50% {
-    color: rgba(34, 34, 34, 0); }
   100% {
-    color: #222222; } }
+    color: rgba(34, 34, 34, 0); } }
 @keyframes blink {
   0% {
     color: #222222; }
-  50% {
-    color: rgba(34, 34, 34, 0); }
   100% {
-    color: #222222; } }
+    color: rgba(34, 34, 34, 0); } }
 @-webkit-keyframes info {
   0% {
     opacity: 0; }
