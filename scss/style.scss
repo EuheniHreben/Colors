@@ -23,7 +23,13 @@ body {
   min-height: 100%;
   overflow: hidden;
   @include phones {
-    & div:nth-child(-n + 3) {
+    & div:nth-child(3) {
+      display: none;
+    }
+    & div:nth-child(4) {
+      display: none;
+    }
+    & div:nth-child(5) {
       display: none;
     }
   }
