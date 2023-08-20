@@ -8,6 +8,7 @@ body {
   height: 100vh;
   font-family: 'Roboto', sans-serif;
   position: relative;
+  color: #fff;
 }
 
 * {
@@ -45,29 +46,20 @@ body {
 
 .col h2 {
   font-size: 28px;
-  color: #fff;
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  transition: background .3s;
-  &:hover {
-    background: rgba(0, 0, 0, .2);
-  }
+  background: rgba(0, 0, 0, .1);
 }
 
 .col button {
   padding: 10px;
   outline: none;
-  color: #fff;
   border-radius: 10px;
   border: none;
-  background: transparent;
+  background: rgba(0, 0, 0, .1);
   font-size: 1.5rem;
   cursor: pointer;
-  transition: background .3s;
-  &:hover {
-    background: rgba(0, 0, 0, .1);
-  }
 }
 
 .col h3 {
