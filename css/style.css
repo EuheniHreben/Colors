@@ -51,8 +51,6 @@ button {
   transition: background .2s linear;
   transition: box-shadow .4s linear;
   transition: transform .2s linear; }
-  .col h2:hover {
-    background: rgba(0, 0, 0, 0.2); }
   .col h2:active {
     transform: translateY(4px); }
 
@@ -66,8 +64,6 @@ button {
   font-size: 1.5rem;
   transition: background .2s linear;
   cursor: pointer; }
-  .col button:hover {
-    background: rgba(0, 0, 0, 0.2); }
 
 .col h3 {
   font-size: 24px;

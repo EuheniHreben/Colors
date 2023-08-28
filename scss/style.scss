@@ -66,9 +66,6 @@ button {
   transition: background .2s linear;
   transition: box-shadow .4s linear;
   transition: transform .2s linear;
-  &:hover {
-    background: rgba(0, 0, 0, .2);
-  }
   &:active {
     transform: translateY(4px);
   }
@@ -84,9 +81,6 @@ button {
   font-size: 1.5rem;
   transition: background .2s linear;
   cursor: pointer;
-  &:hover {
-    background: rgba(0, 0, 0, .2);
-  }
 }
 
 .col h3 {
