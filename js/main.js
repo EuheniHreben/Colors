@@ -48,20 +48,20 @@ function randomGenerator() {
 }
 
 function randomColor() {
-  const c1 = document.getElementById('c1');
-  const c2 = document.getElementById('c2');
-  const h1 = document.getElementById('h1');
-  const h2 = document.getElementById('h2');
+  const c1 = document.getElementById('col1');
+  const c2 = document.getElementById('col2');
+  const h1 = document.getElementById('col-h1');
+  const h2 = document.getElementById('col-h2');
+
   cols.forEach(function(col) {
     const text = col.querySelector('h2');
-    const button = col.querySelector('button');
-    const color = randomGenerator();
+    const randomColor = randomGenerator();
     const isLocked = col.querySelector('i').classList.contains('fa-lock');
     if (isLocked) {
       return;
     }
-    text.textContent = color;
-    col.style.background = randomGenerator();
+    text.textContent = randomColor;
+    col.style.background = randomColor;
   })
   if (screenWidth<480) {
     h1.style.color = c2.style.background;
