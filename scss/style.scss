@@ -5,10 +5,10 @@
 }
 
 body {
-  height: 100vh;
   font-family: 'Roboto', sans-serif;
-  position: relative;
   color: #fff;
+  height: 100vh;
+  position: relative;
 }
 
 * {
@@ -16,18 +16,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
-}
-
-button {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: 0;
-  vertical-align: middle;
-  text-decoration: none;
-  font-size: inherit;
-  font-family: inherit;
 }
 
 .wrapper {
@@ -58,6 +46,7 @@ button {
 }
 
 .col h2 {
+  font-family: inherit;
   font-size: 28px;
   padding: 10px;
   border-radius: 10px;
@@ -73,6 +62,7 @@ button {
 }
 
 .col button {
+  display: inline-block;  
   padding: 10px;
   outline: none;
   border-radius: 10px;
@@ -89,7 +79,6 @@ button {
   position: absolute;
   display: block;
   text-transform: uppercase;
-  cursor: default;
 	right: 0;
 	left: 0;
   bottom: 8%;
@@ -102,13 +91,14 @@ button {
 
 .copy {
   position: absolute;
+  text-transform: uppercase;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 15px;
   color: #ccc;
   background: rgba(0, 0, 0, .3);
   font-size: 40px;
-  -webkit-animation: info 1.2s linear;
-  animation: info 1s linear;
+  -webkit-animation: copyText 1s linear;
+  animation: copyText 1s linear;
   opacity: 0;
   top: 0;
   bottom: 0;
@@ -135,20 +125,20 @@ button {
 
 @-webkit-keyframes blink {
   0% { color: rgba(34, 34, 34, 1); filter: blur(0px);}
-  100% { color: rgba(34, 34, 34, 0); filter: blur(8px);}
+  100% { color: rgba(34, 34, 34, 0); filter: blur(6px);}
 }
 
 @keyframes blink {
   0% { color: rgba(34, 34, 34, 1); filter: blur(0px); }
-  100% { color: rgba(34, 34, 34, 0); filter: blur(8px); }
+  100% { color: rgba(34, 34, 34, 0); filter: blur(6px); }
 }
 
-@-webkit-keyframes info {
-  0% { opacity: 1; filter: blur(0px);}
+@-webkit-keyframes copyText {
+  0% { opacity: .8; filter: blur(0px);}
   100% { opacity: 0; filter: blur(2px); }
 }
 
-@keyframes info {
+@keyframes copyText {
   0% { opacity: .8; filter: blur(0px);}
   100% { opacity: 0; filter: blur(2px);}
 }
