@@ -79,8 +79,8 @@ body {
   color: #ccc;
   background: rgba(0, 0, 0, 0.3);
   font-size: 40px;
-  -webkit-animation: copyText 1s linear;
-  animation: copyText 1s linear;
+  -webkit-animation: copyText 1.5s linear;
+  animation: copyText 1.2s linear;
   opacity: 0;
   top: 0;
   bottom: 0;
@@ -100,8 +100,8 @@ body {
       height: 80px; } }
 
 #blink {
-  -webkit-animation: blink 10s forwards;
-  animation: blink 10s forwards; }
+  -webkit-animation: blink 8s forwards;
+  animation: blink 8s forwards; }
 
 @-webkit-keyframes blink {
   0% {
@@ -119,17 +119,13 @@ body {
     filter: blur(6px); } }
 @-webkit-keyframes copyText {
   0% {
-    opacity: .8;
-    filter: blur(0px); }
+    opacity: .8; }
   100% {
-    opacity: 0;
-    filter: blur(2px); } }
+    opacity: 0; } }
 @keyframes copyText {
   0% {
-    opacity: .8;
-    filter: blur(0px); }
+    opacity: .8; }
   100% {
-    opacity: 0;
-    filter: blur(2px); } }
+    opacity: 0; } }
 
 /*# sourceMappingURL=style.css.map */
