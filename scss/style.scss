@@ -63,17 +63,6 @@ body {
   }
 }
 
-.button2 {
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: #fff;
-  background-color: #4CAF50;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
-
 .col button {
   display: inline-block;  
   padding: 10px;
@@ -97,7 +86,7 @@ body {
   bottom: 8%;
   text-align: center;
   margin: 0 auto;
-  @include phones() {
+  @include phones {
     display: none;
   }
 }
@@ -131,6 +120,56 @@ body {
   }
 }
 
+.select {
+  position: fixed;
+  display: flex;
+  padding: 10px 15px;
+  border-radius: 15px;
+  color: #ccc;
+  background: rgba(0, 0, 0, .3);
+  font-size: 18px;
+  bottom: 1%;  
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  right: 0;
+  @include phones {
+    display: none;
+  }
+}
+
+.closebtn {
+  position: absolute;
+  top: 0px;
+  right: 6px;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: lightgrey;
+}
+
+.select-header {
+  padding: 10px;
+}
+
+.select-container {
+  display: flex;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+.select--2:hover,
+.select--3:hover,
+.select--4:hover,
+.select--5:hover {
+  cursor: pointer;
+  text-shadow: #fff 1px 0 10px;
+}
+
 #blink {
   -webkit-animation: blink 8s forwards;
   animation: blink 8s forwards;
@@ -147,7 +186,7 @@ body {
 }
 
 @-webkit-keyframes copyText {
-  0% { opacity: .8;}
+  0% { opacity: 1;}
   100% { opacity: 0;}
 }
 

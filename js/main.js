@@ -78,3 +78,46 @@ function clickCopy(text) {
 }
 
 randomColor();
+
+const select2 = document.querySelector('.select--2');
+const select3 = document.querySelector('.select--3');
+const select4 = document.querySelector('.select--4');
+const select5 = document.querySelector('.select--5');
+
+function selector () {
+  let c2 = cols[2].style.background;
+  let c3 = cols[3].style.background;
+  let c4 = cols[4].style.background;
+  select5.addEventListener('click', (e) => {
+    e.preventDefault();
+    cols[2].style='display:flex';
+    cols[2].style.background = c2;
+    cols[3].style='display:flex';
+    cols[3].style.background = c3;
+    cols[4].style='display:flex';
+    cols[4].style.background = c4;
+  })
+  select4.addEventListener('click', (e) => {
+    e.preventDefault();
+    cols[2].style='display:flex';
+    cols[2].style.background = c2;
+    cols[3].style='display:flex';
+    cols[3].style.background = c3;
+    cols[4].style='display:none';
+  })
+  select3.addEventListener('click', (e) => {
+    e.preventDefault();
+    cols[2].style='display:flex';
+    cols[2].style.background = c2;
+    cols[3].style='display:none';
+    cols[4].style='display:none';
+  })
+  select2.addEventListener('click', (e) => {
+    e.preventDefault();
+    cols[2].style='display:none';
+    cols[3].style='display:none';
+    cols[4].style='display:none';
+  })
+}
+
+selector();
