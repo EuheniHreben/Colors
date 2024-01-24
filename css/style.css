@@ -37,13 +37,26 @@ body {
   padding: 10px;
   border-radius: 10px;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.1);
-  box-shadow: 3px 3px 10px -7px  black;
-  transition: background .2s linear;
-  transition: box-shadow .4s linear;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 9px rgba(0, 0, 0, 0.3);
+  transition: background-color .2s linear;
+  transition: box-shadow .2s linear;
   transition: transform .2s linear; }
+  .col h2:hover {
+    background-color: rgba(0, 0, 0, 0.2); }
   .col h2:active {
-    transform: translateY(4px); }
+    transform: translateY(6px);
+    box-shadow: 0 6px rgba(0, 0, 0, 0.3); }
+
+.button2 {
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999; }
 
 .col button {
   display: inline-block;
