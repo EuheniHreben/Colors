@@ -121,3 +121,14 @@ function selector () {
 }
 
 selector();
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "230px";
+  document.querySelector('.openNav').style.right = "-50px";
+  
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.querySelector('.openNav').style.right = "0px";
+}

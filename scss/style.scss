@@ -121,15 +121,13 @@ body {
 }
 
 .select {
-  position: fixed;
+  position: absolute;
   display: flex;
   padding: 10px 15px;
-  border-radius: 15px;
   color: #ccc;
-  background: rgba(0, 0, 0, .3);
   font-size: 18px;
   bottom: 1%;  
-  height: 60px;
+  // height: 60px;
   align-items: center;
   justify-content: center;
   margin-right: 10px;
@@ -144,12 +142,14 @@ body {
   top: 0px;
   right: 6px;
   color: white;
+  opacity: .3;
   font-size: 20px;
   cursor: pointer;
 }
 
 .closebtn:hover {
   color: lightgrey;
+  opacity: 1;
 }
 
 .select-header {
@@ -193,4 +193,61 @@ body {
 @keyframes copyText {
   0% { opacity: 1;}
   100% { opacity: 0;}
+}
+
+.openNav {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 47px;
+  height: 47px;
+  display: inline-block;  
+  padding: 10px;
+  outline: none;
+  border-radius: 10px;
+  border: none;
+  background: rgba(0, 0, 0, .1);
+  box-shadow: 3px 3px 10px -7px  black;
+  font-size: 1.5rem;
+  transition: all .4s linear; 
+  cursor: pointer;
+  @include phones {
+    display: none;
+  }
+}
+
+.sidenav {
+  height: 14%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  background-color: #111;
+  opacity: .5;
+  overflow-x: hidden;
+  transition: width 0.4s;
+  padding-top: 40px;
+  border-top-left-radius: 10px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
