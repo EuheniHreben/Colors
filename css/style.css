@@ -88,8 +88,8 @@ body {
   color: #ccc;
   background: rgba(0, 0, 0, 0.3);
   font-size: 40px;
-  -webkit-animation: fadeOut 2s linear;
-  animation: fadeOut 2s linear;
+  -webkit-animation: fadeOut 1s ease-in-out;
+  animation: fadeOut 1s ease-in-out;
   opacity: 0;
   top: 0;
   bottom: 0;
