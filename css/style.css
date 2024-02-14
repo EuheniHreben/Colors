@@ -40,12 +40,13 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 9px rgba(0, 0, 0, 0.3);
   transition: all .2s; }
-  .col h2:hover {
-    background-color: rgba(0, 0, 0, 0.2); }
   .col h2:active {
     transform: translateY(6px);
     box-shadow: 0 6px rgba(0, 0, 0, 0.3); }
 
+@media (any-hover: hover) {
+  .col h2:hover {
+    background-color: rgba(0, 0, 0, 0.2); } }
 .col button {
   display: inline-block;
   padding: 10px;
@@ -60,12 +61,13 @@ body {
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px rgba(0, 0, 0, 0.3);
   transition: all .2s; }
-  .col button:hover {
-    background-color: rgba(0, 0, 0, 0.2); }
   .col button:active {
     transform: translateY(6px);
     box-shadow: 0 4px rgba(0, 0, 0, 0.3); }
 
+@media (any-hover: hover) {
+  .col button:hover {
+    background-color: rgba(0, 0, 0, 0.2); } }
 .col h3 {
   font-size: 24px;
   position: absolute;
