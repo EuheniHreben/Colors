@@ -4,7 +4,7 @@ let openBtn = document.querySelector('.openNav');
 function openNav() {
   modal.classList.add('active');
   modal.style.right = "0px";
-  openBtn.style.right = "-50px";  
+  openBtn.style.right = "-150px";  
 }
 
 function closeNav() {
