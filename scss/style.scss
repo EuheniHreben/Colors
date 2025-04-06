@@ -153,7 +153,7 @@ body {
   }
 }
 
-.closebtn {
+.closeBtn {
   position: absolute;
   top: 0px;
   right: -6%;
@@ -163,7 +163,7 @@ body {
   cursor: pointer;
 }
 
-.closebtn:hover {
+.closeBtn:hover {
   color: lightgrey;
   opacity: 1;
 }
@@ -189,12 +189,7 @@ body {
 
 #blink {
   -webkit-animation: blink 8s forwards;
-  animation: blink 8s forwards;
-}
-
-@-webkit-keyframes blink {
-  0% { color: rgba(34, 34, 34, 1); filter: blur(0px);}
-  100% { color: rgba(34, 34, 34, 0); filter: blur(6px);}
+  animation: blink 10s forwards;
 }
 
 @keyframes blink {
@@ -232,7 +227,7 @@ body {
   }
 }
 
-.sidenav {
+.sideNav {
   position: absolute;
   height: 100px;
   width: 230px;
@@ -249,7 +244,7 @@ body {
   box-shadow: 2px 2px 5px #111;
 }
 
-.sidenav a {
+.sideNav a {
   text-decoration: none;
   font-size: 25px;
   color: #818181;
@@ -257,11 +252,11 @@ body {
   transition: .6s;
 }
 
-.sidenav a:hover {
+.sideNav a:hover {
   color: #f1f1f1;
 }
 
-.sidenav .closebtn {
+.sideNav .closeBtn {
   position: absolute;
   top: 0;
   right: 12px;

@@ -90,25 +90,25 @@ function selector () {
   let c4 = cols[4].style.background;
   select5.addEventListener('click', (e) => {
     e.preventDefault();
-    cols[2].style='display:flex';
     cols[2].style.background = c2;
-    cols[3].style='display:flex';
     cols[3].style.background = c3;
-    cols[4].style='display:flex';
     cols[4].style.background = c4;
+    cols[2, 3, 4].style='display:flex';
+    cols[3].style='display:flex';
+    cols[4].style='display:flex';
   })
   select4.addEventListener('click', (e) => {
     e.preventDefault();
-    cols[2].style='display:flex';
     cols[2].style.background = c2;
-    cols[3].style='display:flex';
     cols[3].style.background = c3;
+    cols[2].style='display:flex';
+    cols[3].style='display:flex';
     cols[4].style='display:none';
   })
   select3.addEventListener('click', (e) => {
     e.preventDefault();
-    cols[2].style='display:flex';
     cols[2].style.background = c2;
+    cols[2].style='display:flex';
     cols[3].style='display:none';
     cols[4].style='display:none';
   })
