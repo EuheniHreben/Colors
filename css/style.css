@@ -1,5 +1,5 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #fff;
   height: 100vh;
   position: relative; }
@@ -29,22 +29,22 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  transition: background .4s linear; }
+  transition: background 0.4s linear; }
 
 .col h2 {
+  cursor: pointer;
   font-family: inherit;
   font-size: 28px;
   padding: 10px;
-  border-radius: 10px;
-  cursor: pointer;
+  border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 9px rgba(0, 0, 0, 0.3);
-  transition: all .2s; }
+  transition: all 0.2s; }
   .col h2:active {
     transform: translateY(6px);
     box-shadow: 0 6px rgba(0, 0, 0, 0.3); }
 
-@media (any-hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .col h2:hover {
     background-color: rgba(0, 0, 0, 0.2); } }
 .col button {
@@ -54,18 +54,18 @@ body {
   border-radius: 10px;
   border: none;
   background: rgba(0, 0, 0, 0.1);
-  box-shadow: 3px 3px 10px -7px  black;
+  box-shadow: 3px 3px 10px -7px black;
   font-size: 1.5rem;
-  transition: background .2s linear;
+  transition: background 0.2s linear;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px rgba(0, 0, 0, 0.3);
-  transition: all .2s; }
+  transition: all 0.2s; }
   .col button:active {
     transform: translateY(6px);
     box-shadow: 0 4px rgba(0, 0, 0, 0.3); }
 
-@media (any-hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .col button:hover {
     background-color: rgba(0, 0, 0, 0.2); } }
 .col h3 {
@@ -105,7 +105,7 @@ body {
   @media (max-width: 700px) {
     .copy {
       display: none;
-      animation-delay: .4s;
+      animation-delay: 0.4s;
       font-size: 16px;
       width: 250px;
       height: 80px; } }
@@ -113,15 +113,14 @@ body {
 .select {
   position: absolute;
   display: flex;
-  padding: 0px 15px 10px 15px;
-  color: #ccc;
-  font-size: 18px;
-  bottom: 1%;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
+  padding: 0px 15px 10px 15px;
+  color: #ccc;
+  bottom: 1%;
   right: 0;
-  font-size: 20px; }
+  margin-right: 10px;
+  font-size: 28px; }
   @media (max-width: 700px) {
     .select {
       display: none; } }
@@ -131,7 +130,7 @@ body {
   top: 0px;
   right: -6%;
   color: white;
-  opacity: .3;
+  opacity: 0.3;
   font-size: 16px;
   cursor: pointer; }
 
@@ -141,6 +140,7 @@ body {
 
 .select-header {
   padding: 10px;
+  font-size: 16px;
   font-weight: bold; }
 
 .select-container {
@@ -148,14 +148,17 @@ body {
   gap: 10px;
   margin-right: 10px; }
 
-.select--2:hover,
-.select--3:hover,
-.select--4:hover,
-.select--5:hover {
-  cursor: pointer;
-  text-shadow: #fff 1px 0 10px; }
+.select-number {
+  cursor: pointer; }
 
+@media (hover: hover) and (pointer: fine) {
+  .select-number--2:hover,
+  .select-number--3:hover,
+  .select-number--4:hover,
+  .select-number--5:hover {
+    color: #444; } }
 #blink {
+  font-size: 28px;
   -webkit-animation: blink 8s forwards;
   animation: blink 10s forwards; }
 
@@ -183,8 +186,8 @@ body {
   position: fixed;
   right: 0;
   bottom: 0;
-  width: 47px;
-  height: 47px;
+  width: 57px;
+  height: 57px;
   display: inline-block;
   padding: 10px;
   margin: 0 10px 10px 0;
@@ -193,13 +196,16 @@ body {
   border: none;
   background: rgba(0, 0, 0, 0.1);
   font-size: 1.5rem;
-  transition: right .4s linear;
   box-shadow: 1px 1px 8px 2px #111;
+  transition: right 0.4s linear, background 0.2s ease-in;
   cursor: pointer; }
   @media (max-width: 700px) {
     .openNav {
       display: none; } }
 
+@media (hover: hover) and (pointer: fine) {
+  .openNav:hover {
+    background: rgba(0, 0, 0, 0.3); } }
 .sideNav {
   position: absolute;
   height: 100px;
@@ -209,9 +215,9 @@ body {
   bottom: 0;
   right: -1500px;
   background-color: #111;
-  opacity: .5;
+  opacity: 0.5;
   overflow-x: hidden;
-  transition: right .6s;
+  transition: right 0.6s;
   border-radius: 16px;
   margin: 0 10px 10px 0;
   box-shadow: 2px 2px 5px #111; }
@@ -221,11 +227,11 @@ body {
   font-size: 25px;
   color: #818181;
   display: block;
-  transition: .6s; }
+  transition: all 0.2s ease-in; }
 
-.sideNav a:hover {
-  color: #f1f1f1; }
-
+@media (hover: hover) and (pointer: fine) {
+  .sideNav a:hover {
+    color: #f1f1f1; } }
 .sideNav .closeBtn {
   position: absolute;
   top: 0;
