@@ -1,5 +1,4 @@
 const cols = document.querySelectorAll(".col");
-const wrapper = document.querySelector(".wrapper");
 const screenWidth = window.screen.width;
 
 function randomGenerator() {
