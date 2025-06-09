@@ -18,6 +18,10 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+a {
+  text-decoration: none;
+}
+
 .wrapper {
   display: flex;
   width: 100%;
@@ -92,16 +96,19 @@ body {
   }
 }
 
-.col h3 {
-  font-size: 24px;
+.blink {
   position: absolute;
   display: block;
+  font-weight: bold;
   text-transform: uppercase;
   right: 0;
   left: 0;
   bottom: 8%;
   text-align: center;
   margin: 0 auto;
+  font-size: 32px;
+  -webkit-animation: blink 8s forwards;
+  animation: blink 10s forwards;
   @include phones {
     display: none;
   }
@@ -141,7 +148,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px 15px 10px 15px;
+  padding: 0px 15px 25px 15px;
   color: #ccc;
   bottom: 1%;
   right: 0;
@@ -150,21 +157,6 @@ body {
   @include phones {
     display: none;
   }
-}
-
-.closeBtn {
-  position: absolute;
-  top: 0px;
-  right: -6%;
-  color: white;
-  opacity: 0.3;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.closeBtn:hover {
-  color: lightgrey;
-  opacity: 1;
 }
 
 .select-header {
@@ -181,6 +173,7 @@ body {
 
 .select-number {
   cursor: pointer;
+  color: #fff;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -190,12 +183,6 @@ body {
   .select-number--5:hover {
     color: #444;
   }
-}
-
-#blink {
-  font-size: 28px;
-  -webkit-animation: blink 8s forwards;
-  animation: blink 10s forwards;
 }
 
 @keyframes blink {
@@ -257,41 +244,39 @@ body {
   }
 }
 
-.sideNav {
-  position: absolute;
-  height: 100px;
-  width: 230px;
+.sideBar {
   position: fixed;
+  height: 120px;
+  width: 230px;
   z-index: 1;
   bottom: 0;
   right: -1500px;
   background-color: #111;
   opacity: 0.5;
   overflow-x: hidden;
-  transition: right 0.6s;
   border-radius: 16px;
   margin: 0 10px 10px 0;
   box-shadow: 2px 2px 5px #111;
+  transition: right 0.6s ease-out;
 }
 
-.sideNav a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
+.closeBtn {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 14px;
+  font-size: 36px;
+  color: #fff;
   transition: all 0.2s ease-in;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .sideNav a:hover {
-    color: #f1f1f1;
+  .closeBtn:hover {
+    color: #444;
   }
 }
 
-.sideNav .closeBtn {
-  position: absolute;
-  top: 0;
-  right: 12px;
-  font-size: 36px;
-  margin-left: 50px;
+.blur {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
 }

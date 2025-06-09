@@ -10,6 +10,9 @@ body {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
 
+a {
+  text-decoration: none; }
+
 .wrapper {
   display: flex;
   width: 100%;
@@ -68,18 +71,21 @@ body {
 @media (hover: hover) and (pointer: fine) {
   .col button:hover {
     background-color: rgba(0, 0, 0, 0.2); } }
-.col h3 {
-  font-size: 24px;
+.blink {
   position: absolute;
   display: block;
+  font-weight: bold;
   text-transform: uppercase;
   right: 0;
   left: 0;
   bottom: 8%;
   text-align: center;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-size: 32px;
+  -webkit-animation: blink 8s forwards;
+  animation: blink 10s forwards; }
   @media (max-width: 700px) {
-    .col h3 {
+    .blink {
       display: none; } }
 
 .copy {
@@ -115,7 +121,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px 15px 10px 15px;
+  padding: 0px 15px 25px 15px;
   color: #ccc;
   bottom: 1%;
   right: 0;
@@ -124,19 +130,6 @@ body {
   @media (max-width: 700px) {
     .select {
       display: none; } }
-
-.closeBtn {
-  position: absolute;
-  top: 0px;
-  right: -6%;
-  color: white;
-  opacity: 0.3;
-  font-size: 16px;
-  cursor: pointer; }
-
-.closeBtn:hover {
-  color: lightgrey;
-  opacity: 1; }
 
 .select-header {
   padding: 10px;
@@ -149,7 +142,8 @@ body {
   margin-right: 10px; }
 
 .select-number {
-  cursor: pointer; }
+  cursor: pointer;
+  color: #fff; }
 
 @media (hover: hover) and (pointer: fine) {
   .select-number--2:hover,
@@ -157,11 +151,6 @@ body {
   .select-number--4:hover,
   .select-number--5:hover {
     color: #444; } }
-#blink {
-  font-size: 28px;
-  -webkit-animation: blink 8s forwards;
-  animation: blink 10s forwards; }
-
 @keyframes blink {
   0% {
     color: #222222;
@@ -206,37 +195,35 @@ body {
 @media (hover: hover) and (pointer: fine) {
   .openNav:hover {
     background: rgba(0, 0, 0, 0.3); } }
-.sideNav {
-  position: absolute;
-  height: 100px;
-  width: 230px;
+.sideBar {
   position: fixed;
+  height: 120px;
+  width: 230px;
   z-index: 1;
   bottom: 0;
   right: -1500px;
   background-color: #111;
   opacity: 0.5;
   overflow-x: hidden;
-  transition: right 0.6s;
   border-radius: 16px;
   margin: 0 10px 10px 0;
-  box-shadow: 2px 2px 5px #111; }
+  box-shadow: 2px 2px 5px #111;
+  transition: right 0.6s ease-out; }
 
-.sideNav a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
+.closeBtn {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 14px;
+  font-size: 36px;
+  color: #fff;
   transition: all 0.2s ease-in; }
 
 @media (hover: hover) and (pointer: fine) {
-  .sideNav a:hover {
-    color: #f1f1f1; } }
-.sideNav .closeBtn {
-  position: absolute;
-  top: 0;
-  right: 12px;
-  font-size: 36px;
-  margin-left: 50px; }
+  .closeBtn:hover {
+    color: #444; } }
+.blur {
+  filter: blur(8px);
+  transition: filter 0.3s ease; }
 
 /*# sourceMappingURL=style.css.map */
