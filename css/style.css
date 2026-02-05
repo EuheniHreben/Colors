@@ -1,30 +1,57 @@
+/* =====================================================
+   Reset / Base styles
+   ===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   color: #fff;
-  height: 100vh;
-  position: relative; }
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent; }
+  height: 100svh;
+  position: relative;
+}
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+}
+
+/* =====================================================
+   Layout
+   ===================================================== */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: 5;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
 
 .wrapper {
   display: flex;
   width: 100%;
   min-height: 100%;
-  overflow: hidden; }
-  @media (max-width: 700px) {
-    .wrapper div:nth-child(3) {
-      display: none; }
-    .wrapper div:nth-child(4) {
-      display: none; }
-    .wrapper div:nth-child(5) {
-      display: none; } }
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hide extra columns on mobile */
+@media (max-width: 700px) {
+  .wrapper div:nth-child(3),
+  .wrapper div:nth-child(4),
+  .wrapper div:nth-child(5) {
+    display: none;
+  }
+}
 
 .col {
   flex: 1;
@@ -32,8 +59,14 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  transition: background 0.4s linear; }
+  transition: background 0.4s linear;
+}
 
+/* =====================================================
+   Column content
+   ===================================================== */
+
+/* Color value (HEX) */
 .col h2 {
   cursor: pointer;
   font-family: inherit;
@@ -41,189 +74,273 @@ a {
   padding: 10px;
   border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 9px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s; }
-  .col h2:active {
-    transform: translateY(6px);
-    box-shadow: 0 6px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+}
 
+.col h2:active {
+  transform: translateY(6px);
+  box-shadow: 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover only for mouse devices */
 @media (hover: hover) and (pointer: fine) {
   .col h2:hover {
-    background-color: rgba(0, 0, 0, 0.2); } }
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Lock button */
 .col button {
   display: inline-block;
   padding: 10px;
+  width: 48px;
+  height: 48px;
+  border: none;
   outline: none;
   border-radius: 10px;
-  border: none;
-  background: rgba(0, 0, 0, 0.1);
-  box-shadow: 3px 3px 10px -7px black;
-  font-size: 1.5rem;
-  transition: background 0.2s linear;
   cursor: pointer;
+
+  font-size: 1.5rem;
   background-color: rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s; }
-  .col button:active {
-    transform: translateY(6px);
-    box-shadow: 0 4px rgba(0, 0, 0, 0.3); }
+
+  transition: all 0.2s;
+}
+
+.col button:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px rgba(0, 0, 0, 0.3);
+}
 
 @media (hover: hover) and (pointer: fine) {
   .col button:hover {
-    background-color: rgba(0, 0, 0, 0.2); } }
-.blink {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* =====================================================
+   UI Elements
+   ===================================================== */
+
+/* "Press space" hint */
+.hint {
   position: absolute;
-  display: block;
+  left: 0;
+  right: 0;
+  bottom: 8%;
+  margin: 0 auto;
+
+  text-align: center;
+  font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
-  right: 0;
-  left: 0;
-  bottom: 8%;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 32px;
-  -webkit-animation: blink 8s forwards;
-  animation: blink 10s forwards; }
-  @media (max-width: 700px) {
-    .blink {
-      display: none; } }
 
+  animation: blink 10s forwards;
+}
+
+@media (max-width: 700px) {
+  .blink {
+    display: none;
+  }
+}
+
+/* Copy notification */
 .copy {
   position: absolute;
-  padding: 30px;
-  border-radius: 15px;
-  color: #ccc;
-  background: rgba(0, 0, 0, 0.3);
-  font-size: 30px;
-  -webkit-animation: fadeOut 1s ease-in-out;
-  animation: fadeOut 1s ease-in-out;
-  opacity: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  inset: 0;
+  margin: auto;
+
   max-width: 400px;
   height: 80px;
+  padding: 30px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: auto; }
-  @media (max-width: 700px) {
-    .copy {
-      display: none;
-      animation-delay: 0.4s;
-      font-size: 16px;
-      width: 250px;
-      height: 80px; } }
 
+  border-radius: 15px;
+  font-size: 30px;
+  color: #ccc;
+  background: rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  animation: fadeOut 1s ease-in-out;
+}
+
+@media (max-width: 700px) {
+  .copy {
+    display: none;
+    font-size: 18px;
+    width: 250px;
+  }
+}
+
+/* Column selector */
 .select {
   position: absolute;
+  bottom: 1%;
+  right: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0px 15px 25px 15px;
-  color: #ccc;
-  bottom: 1%;
-  right: 0;
+
+  padding: 0 15px 25px;
   margin-right: 10px;
-  font-size: 28px; }
-  @media (max-width: 700px) {
-    .select {
-      display: none; } }
+
+  font-size: 28px;
+  color: #ccc;
+}
+
+@media (max-width: 700px) {
+  .select {
+    display: none;
+  }
+}
 
 .select-header {
   padding: 10px;
   font-size: 16px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .select-container {
   display: flex;
   gap: 10px;
-  margin-right: 10px; }
+  margin-right: 10px;
+}
 
 .select-number {
   cursor: pointer;
-  color: #fff; }
+  color: #fff;
+}
 
 @media (hover: hover) and (pointer: fine) {
   .select-number--2:hover,
   .select-number--3:hover,
   .select-number--4:hover,
   .select-number--5:hover {
-    color: #444; } }
-@keyframes blink {
-  0% {
-    color: #222222;
-    filter: blur(0px); }
-  100% {
-    color: rgba(34, 34, 34, 0);
-    filter: blur(6px); } }
-@keyframes fadeOut {
-  0% {
-    opacity: 0; }
-  10% {
-    opacity: 1; }
-  90% {
-    opacity: 1;
-    -webkit-transform: translateY(0px); }
-  99% {
-    opacity: 0;
-    -webkit-transform: translateY(-25px); }
-  100% {
-    opacity: 0; } }
+    color: #444;
+  }
+}
+
+/* =====================================================
+   Sidebar
+   ===================================================== */
+
 .openNav {
   position: fixed;
-  right: 0;
-  bottom: 0;
+  right: 10px;
+  bottom: 10px;
+  transform: translateX(0);
+
   width: 57px;
   height: 57px;
-  display: inline-block;
-  padding: 10px;
   margin: 0 10px 10px 0;
-  outline: none;
-  border-radius: 10px;
+
   border: none;
-  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+
   font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.1);
   box-shadow: 1px 1px 8px 2px #111;
-  transition: right 0.4s linear, background 0.2s ease-in;
-  cursor: pointer; }
-  @media (max-width: 700px) {
-    .openNav {
-      display: none; } }
+
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.openNav.active {
+  transform: translateX(200px);
+}
+
+@media (max-width: 700px) {
+  .openNav {
+    display: none;
+  }
+}
 
 @media (hover: hover) and (pointer: fine) {
   .openNav:hover {
-    background: rgba(0, 0, 0, 0.3); } }
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
 .sideBar {
   position: fixed;
-  height: 120px;
+  right: 10px; 
+  bottom: 10px;
+  z-index: 10;
+
   width: 230px;
-  z-index: 1;
-  bottom: 0;
-  right: -1500px;
+  height: 120px;
+
   background-color: #111;
-  opacity: 0.5;
-  overflow-x: hidden;
+  transform: translateX(-350px);
+  opacity: 0;
+
   border-radius: 16px;
   margin: 0 10px 10px 0;
   box-shadow: 2px 2px 5px #111;
-  transition: right 0.6s ease-out; }
+
+  transition:
+    transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.3s ease;
+}
+
+.sideBar.active {
+  transform: translateX(0);
+  opacity: 0.5;
+}
 
 .closeBtn {
   position: absolute;
-  cursor: pointer;
   top: 0;
   right: 14px;
+
   font-size: 36px;
+  cursor: pointer;
   color: #fff;
-  transition: all 0.2s ease-in; }
+
+  transition: color 0.2s ease-in;
+}
 
 @media (hover: hover) and (pointer: fine) {
   .closeBtn:hover {
-    color: #444; } }
-.blur {
-  filter: blur(8px);
-  transition: filter 0.3s ease; }
+    color: #444;
+  }
+}
 
-/*# sourceMappingURL=style.css.map */
+/* =====================================================
+   Animations
+   ===================================================== */
+
+@keyframes blink {
+  0% {
+    color: rgba(34, 34, 34, 1);
+    filter: blur(0);
+  }
+  100% {
+    color: rgba(34, 34, 34, 0);
+    filter: blur(6px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* =====================================================
+   Utility
+   ===================================================== */
+
+.blur {
+  filter: blur(4px);
+  transition: filter 0.3s ease;
+}
+

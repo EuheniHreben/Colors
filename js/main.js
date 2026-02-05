@@ -41,40 +41,44 @@ function clickCopy(text) {
 randomColor();
 
 if (screenWidth < 700) {
-  document.addEventListener("touchstart", (event) => {
-    const type = event.target.dataset.type;
+  document.addEventListener("touchstart", (e) => {
+    const type = e.target.dataset.type;
     if (type === "lock") {
       const node =
-        event.target.tagName.toLowerCase() === "i"
-          ? event.target
-          : event.target.children[0];
+        e.target.tagName.toLowerCase() === "i"
+          ? e.target
+          : e.target.children[0];
       node.classList.toggle("fa-lock-open");
       node.classList.toggle("fa-lock");
     } else if (type === "copy") {
-      clickCopy(event.target.textContent);
+      clickCopy(e.target.textContent);
     } else {
       randomColor();
     }
   });
 } else {
-  document.addEventListener("keydown", (event) => {
-    event.preventDefault();
-    if (event.code.toLowerCase() === "space") {
+  document.addEventListener("keydown", (e) => {
+    const tag = e.target.tagName.toLowerCase();
+    if (tag === 'input' || tag === 'textarea') return 
+    
+    if (e.code === "Space") {
+      e.preventDefault()
+      if (e.repeat) return
       randomColor();
     }
   });
 
-  document.addEventListener("click", (event) => {
-    const type = event.target.dataset.type;
+  document.addEventListener("click", (e) => {
+    const type = e.target.dataset.type;
     if (type === "lock") {
       const node =
-        event.target.tagName.toLowerCase() === "i"
-          ? event.target
-          : event.target.children[0];
+        e.target.tagName.toLowerCase() === "i"
+          ? e.target
+          : e.target.children[0];
       node.classList.toggle("fa-lock-open");
       node.classList.toggle("fa-lock");
     } else if (type === "copy") {
-      clickCopy(event.target.textContent);
+      clickCopy(e.target.textContent);
     }
   });
 }

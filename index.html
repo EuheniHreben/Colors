@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -30,33 +30,35 @@
   </head>
 
   <body>
+    <div class="overlay"></div>
+
     <div class="wrapper">
-      <div class="col" id="col1">
+      <div class="col" id="col1" data-col="1">
         <h2 data-type="copy" id="col-h1"></h2>
         <button data-type="lock">
           <i class="fa-solid fa-lock-open" data-type="lock"></i>
         </button>
       </div>
-      <div class="col" id="col2">
+      <div class="col" id="col2" data-col="2">
         <h2 data-type="copy" id="col-h2"></h2>
         <button data-type="lock">
           <i class="fa-solid fa-lock-open" data-type="lock"></i>
         </button>
       </div>
-      <div class="col">
+      <div class="col" data-col="3">
         <h2 data-type="copy"></h2>
         <button data-type="lock">
           <i class="fa-solid fa-lock-open" data-type="lock"></i>
         </button>
-        <h1 class="blink">press 'space'</h1>
+        <div class="hint">press 'space'</div>
       </div>
-      <div class="col">
+      <div class="col" data-col="4">
         <h2 data-type="copy"></h2>
         <button data-type="lock">
           <i class="fa-solid fa-lock-open" data-type="lock"></i>
         </button>
       </div>
-      <div class="col">
+      <div class="col" data-col="5">
         <h2 data-type="copy"></h2>
         <button data-type="lock">
           <i class="fa-solid fa-lock-open" data-type="lock"></i>
