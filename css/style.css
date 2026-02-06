@@ -44,22 +44,17 @@ a {
   z-index: 1;
 }
 
-/* Hide extra columns on mobile */
-@media (max-width: 700px) {
-  .wrapper div:nth-child(3),
-  .wrapper div:nth-child(4),
-  .wrapper div:nth-child(5) {
-    display: none;
-  }
-}
-
 .col {
   flex: 1;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   transition: background 0.4s linear;
+}
+
+.col.is-visible {
+  display: flex;
 }
 
 /* =====================================================
@@ -80,7 +75,7 @@ a {
 
 .col h2:active {
   transform: translateY(6px);
-  box-shadow: 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px rgba(0, 0, 0, 0.3);
 }
 
 /* Hover only for mouse devices */
@@ -110,7 +105,7 @@ a {
 
 .col button:active {
   transform: translateY(4px);
-  box-shadow: 0 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -123,12 +118,54 @@ a {
    UI Elements
    ===================================================== */
 
+.shuffle-colors {
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  z-index: 20;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 700px) {
+  .shuffle-colors {
+    display: none;
+  }
+}
+
+.refresh {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.fa-arrows-rotate:before,
+.fa-refresh:before,
+.fa-sync:before {
+  content: "\f021";
+  transform-origin: center;
+  width: 36px;
+  height: 38px;
+  transform: rotate(var(--angle, 0deg));
+  transition: transform 0.4s ease;
+}
+
+.shuffle-colors:focus-visible {
+  outline: none;
+}
+
 /* "Press space" hint */
 .hint {
   position: absolute;
-  left: 0;
-  right: 0;
   bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
   margin: 0 auto;
 
   text-align: center;
@@ -214,13 +251,13 @@ a {
 .select-number {
   cursor: pointer;
   color: #fff;
+  background: none;
+  border: none;
+  font-size: 26px;
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .select-number--2:hover,
-  .select-number--3:hover,
-  .select-number--4:hover,
-  .select-number--5:hover {
+  .select-number:hover {
     color: #444;
   }
 }
@@ -254,6 +291,10 @@ a {
   transform: translateX(200px);
 }
 
+.openNav:focus-visible {
+  outline: none;
+}
+
 @media (max-width: 700px) {
   .openNav {
     display: none;
@@ -268,7 +309,7 @@ a {
 
 .sideBar {
   position: fixed;
-  right: 10px; 
+  right: 10px;
   bottom: 10px;
   z-index: 10;
 
@@ -311,6 +352,13 @@ a {
   }
 }
 
+.shuffle-colors,
+.select-number,
+.col h2,
+.col button {
+  user-select: none;
+}
+
 /* =====================================================
    Animations
    ===================================================== */
@@ -343,4 +391,3 @@ a {
   filter: blur(4px);
   transition: filter 0.3s ease;
 }
-
